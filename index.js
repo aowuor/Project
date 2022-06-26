@@ -15,28 +15,26 @@ function getFood(){
             option.value = option.text;
             option.text = data.meals[food].strMeal;
             console.log((option.text));
+            
+            select.addEventListener("change", () => {
+                console.log(food.strMeal);
+                renderMeal(food);
+            })
 
-        }
-        // selected.addEventListener("onchange", displayFoodDetails(option.value));
-    });
-}
+    let renderMeal = function(meal){
+        let foodTitle = document.getElementById("food-title");
+        foodTitle.innerHTML = data.meals[meal].strMeal;
+        
 
+        let foodInstructions = document.getElementById("food-instructions");
+        foodInstructions.innerHTML = data.meals[meal].strInstructions;
+        
 
-function displayFoodDetails(){
-    etch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
-    .then((response) => response.json())
-    .then((data) => {
-        for(food in data.meals){
-            let option = document.createElement("option");
-    
-            let foodTitle = document.getElementById("food-title");
-            foodTitle.innerHTML = data.meals[food].strMeal;
+        let foodImage = document.getElementById("food-image");
+        foodImage.src = data.meals[meal].strMealThumb;
+        
+    }
 
-            let foodImage = document.getElementById("main-image");
-            foodImage.src = data.meals[food].strMealThumb;
-
-            let foodInstructions = document.getElementById("food-instructions");
-            foodInstructions.innerHTML = data.meals[food].strMealThumb;
-        }
-    });
+ }
+})
 }
