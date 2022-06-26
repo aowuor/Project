@@ -11,8 +11,6 @@ function getFood(){
             let option = document.createElement("option");
             let select = document.getElementById("options");
             select.appendChild(option);
-            option.className = "elements";
-            option.value = option.text;
             option.text = data.meals[food].strMeal;
             
             select.addEventListener("change", () => {
@@ -21,7 +19,6 @@ function getFood(){
             }
 
     let renderMeal = (meal) => {
-        let selected = document.getElementById("options").meal
         let foodTitle = document.getElementById("food-title");
         foodTitle.innerHTML = data.meals[meal].strMeal;
     

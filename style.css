@@ -18,6 +18,16 @@ body{
     padding: 20px;
 }
 
+#options{
+    padding: 10px 5px;
+    font-size: 0.5em;
+    border-radius: 5%;
+    background-image: linear-gradient(rgb(180, 175, 177),#EEF2F7);
+}
+
+#options:hover{
+    color: blue;
+}
 #food-name{
     padding: 10px 5px;
     font-size: 1.6em;
@@ -50,8 +60,7 @@ body{
 #food-instructions{
     height: 100%;
     width: 60%;
-    overflow: scroll;
-    
+    overflow: scroll; 
 }
 
 #main-image{
@@ -60,9 +69,7 @@ body{
     background-size: cover;
     margin: auto 20px; 
     width: 100%;
-    height: 100%;
-    
-    
+    height: 100%;  
 }
 
 .main-food-name{
