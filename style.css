@@ -58,7 +58,9 @@ body{
     display: block;
     background-size: cover;
     margin: auto 20px; 
-    flex: 1;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .main-food-name{

@@ -14,27 +14,22 @@ function getFood(){
             option.className = "elements";
             option.value = option.text;
             option.text = data.meals[food].strMeal;
-            console.log((option.text));
             
             select.addEventListener("change", () => {
-                console.log(food.strMeal);
-                renderMeal(food);
+                renderMeal(select.selectedIndex);
             })
+            }
 
-    let renderMeal = function(meal){
+    let renderMeal = (meal) => {
+        let selected = document.getElementById("options").meal
         let foodTitle = document.getElementById("food-title");
         foodTitle.innerHTML = data.meals[meal].strMeal;
-        
-
+    
         let foodInstructions = document.getElementById("food-instructions");
         foodInstructions.innerHTML = data.meals[meal].strInstructions;
         
-
-        let foodImage = document.getElementById("food-image");
-        foodImage.src = data.meals[meal].strMealThumb;
-        
-    }
-
- }
-})
+        let mainImage = document.getElementById("main-image");
+        mainImage.src = data.meals[meal].strMealThumb; 
+        }
+    })
 }
